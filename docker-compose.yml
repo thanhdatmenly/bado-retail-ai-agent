@@ -1,0 +1,9 @@
+services:
+  bado-bot:                  # Tên của ứng dụng
+    build: .                 # Bảo quản đốc đọc file Dockerfile ở ngay thư mục này
+    ports:
+      - "8501:8501"          # Nối cửa 8501 của máy tính thật với cửa 8501 của xe tải
+    env_file:
+      - .env                 # Bơm chìa khóa API bí mật từ máy thật thẳng vào xe tải (rất an toàn)
+    volumes:
+      - ./data:/app/data     # Cắm ống nước: Nối thư mục data của máy tính thật với thư mục data trong xe tải
